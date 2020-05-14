@@ -1,0 +1,188 @@
+---
+title: 'Project 1: Exploratory Data Analysis'
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+data: 3/15/20
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, fig.align = "center", warning = F, message = F,
+tidy=TRUE, tidy.opts=list(width.cutoff=60), R.options=list(max.print=100))
+```
+
+## Madeleine Poziombka mp43576
+
+### Introduction
+
+  For this project I used two datasets. The first dataset I found is called "USArrests", which I found in the "datasets" package in R and contains data on violent crimes. This dataset contains 50 observations for 4 variables by the 50 US states. The first variable in this datasest is "Murder"", which is measured by murder arrests per 100,000 people. The second variable in this dataset is "Assault", which is measured by assault arrests per 100,000 people. The third variable is "UrbanPop", which is the percent of the population that is an urban popualtion. The fourth variable is "Rape", which is measured by rape arrests per 100,000 people. The second dataset that is used for this project is called "States", which I found in the "carData" package in R and contains data on education and related statistics for each of the 50 states. The first variable is "region", which contains the US census regions. The regions are East North Central (ENC), East South Central (ESC), Mid-Atlantic (MA), Mountain (MTN), New England (NE), Pacific (PAC), South Atlantic (SA), West North Central (WNC), and West South Central (WSC). The second variable is "pop", which measures population in 1000s. The third variable is "SATV", which is the average scores for high school students on the verbal component of the Scholatic Aptitude Test. The fourth variable is "SATM", which is the average scores for high school students on the math component of the Scholatic Aptitude Test. The fifth variable in the dataset is "percent", which is the percentage of graduating high school students in the state who took the SAT exam. The sixth variable is "dollars", which is state spending on education in $1000s per student. The seventh variable is "pay", which is the average teacher's salary in the state in $1000s. 
+  
+  I found these data sets interesting because I was curious if there was any correlation between violent crime and education spending. I expected that in states where there was less money spent on education, there would be more occurences of violent crime. 
+
+
+#### Untidy dataset "States_"
+```{r}
+library(dplyr)
+library(tidyverse)
+States_<- read_csv("States_.csv")
+USArrests_ <- read_csv("USArrests.csv")
+States_untidy <- States_ %>% pivot_longer(cols = c("SATV", "SATM"), names_to = "SAT", values_to = "score")
+```
+
+My datasets were already tidy, so I used "pivot_longer" to untidy my datasets. I combined "SATV" and "SATM" into one column even. 
+
+#### Join datasets "States_untidy" and "USArrests_"
+```{r}
+fulldata <- USArrests_ %>% full_join(States_untidy, by=c("State"="state"))
+```
+
+I performed a full join on my datasets because I didn't want to lose any variables. Since there was a difference in capitalization between the USArrests dataset and the States dataset, I had to define that State=state so that the datasets could be joined. 
+
+#### Tidy data set 
+```{r}
+fulldata <- fulldata %>% pivot_wider(names_from = "SAT", values_from = "score")
+```
+
+I used the "pivot_wider" function to re-tidy my dataset. I separated SATV and SATM into two separate columns again since they should be displayed as two distinct variables. 
+
+#### Filter function 
+```{r}
+fulldata %>% filter(region=="MTN", Murder>=10)
+```
+
+##### Mutate function
+```{r}
+fulldata <- fulldata %>% mutate(avg_crime = (Murder+Rape+Assault)/3)
+```
+
+#### Select function 
+```{r}
+fulldata %>% select(State, Murder, Assault, Rape, avg_crime, everything())
+```
+
+#### Arrange function
+```{r}
+fulldata %>% arrange(desc(avg_crime))
+fulldata %>% arrange(desc(Rape))
+fulldata %>% arrange(desc(Murder))
+fulldata %>% arrange(desc(Assault))
+```
+
+#### Group by function and summarize 
+```{r}
+fulldata %>% group_by(region) %>% summarize("average rape" = mean(Rape, na.rm=T))
+```
+
+
+#### Summary Statistic 1
+```{r}
+fulldata %>% group_by(region) %>% summarize(mean_rape = mean(Rape, na.rm=T), sd_rape = sd(Rape, na.rm=T), n=n(), se_rape = sd_rape/sqrt(n))
+```
+
+
+#### Summary Statistic 2
+```{r}
+fulldata %>% group_by(UrbanPop > 50) %>% summarize(count=n()) 
+```
+
+
+#### Summary Statistic 3
+```{r}
+fulldata %>% summarize(mean_assault = mean(Assault, na.rm=T), n_states = n_distinct(State))
+```
+
+
+#### Summary Statistic 4 
+```{r}
+fulldata %>% summarize(min(Murder, na.rm=T), max(Murder, na.rm=T))
+```
+
+
+#### Summary Statistic 5 
+```{r}
+fulldata %>% summarize(cor(pay, SATM))
+```
+
+
+#### Summary Statistic 6
+```{r}
+fulldata %>% summarize(cor(pop, avg_crime))
+```
+
+
+#### Summary Statistic 7 
+```{r}
+fulldata %>% summarize_all(n_distinct) 
+```
+
+
+#### Summary Statistic 8 
+```{r}
+fulldata %>% summarize_if(is.numeric, list(min=min, max=max), na.rm=T)
+```
+
+#### Summary Statistic 9 
+```{r}
+fulldata %>% summarize(var(SATV), var(SATM))
+```
+
+
+#### Summary Statistic 10
+```{r}
+corfulldata <- fulldata %>% select_if(is.numeric)
+cor(corfulldata)
+```
+
+When working with datasets, it is important to explore and manipulate them. In order to do this, I first used the six core dplyr functions. These six core functions are filter, select, arrange, group-by, mutate, and summarize. I used the filter function to look at states in the mountain region with murder rates greater than or equal to 10. I found that New Mexico and Nevada are the only two states in the dataset where murder is greater than or equal to 10. I was curious what the average violent crime rate for each state is, so I used the mutate function to create a new variable “avg_crime” by averaging murder, rape, and assault for each state. I used the select function to reorder my data set so I could view murder, assault, rape, and average crime right next to each other. I wanted to look at where states ranked for murder, assault, rape, and average crime, so I used the arrange function to view the states in descending order for each variable. I found that the same few states were ranked somewhere in the top 10, such as Florida and Arizona. I used the group_by function to view the average rape for each region. 
+
+To explore my dataset further, I used 10 different summary statistics. I used the mean and sd functions, along with group_by and summarize, to view the mean, standard deviation, and standard error of rape for each region. I used a combination of group_by and summarize to view the number of states with an urban population greater than 50. I found that there are 41 states with an urban population that is greater than 50. I used a combination of summarize and n_distinct to see the overall mean assault rate. I used summarize combined with min and max to find the minimum and maximum murder rate. The found that the minimum murder rate is 0.8 (North Dakota) and the maximum murder rate is 17.4 (Georgia). I was curious if there is any correlation between teachers salary (pay) and math score on the SAT (SATM), so I used the cor function. According to my dataset there is a -0.458 correlation which shows there is a negative correlation, which probably isn’t the case in real life. I was curious to see if there is a correlation between population and average crime, so I used the cor function. According to my dataset, there is a 0.377 correlation. I would have expected a stronger correlation. I used summarize all and n_distinct to see the number of distinct observations for each variable. I used summarize_if, is.numeric, min, and max to look at the minimum and maximum value for each of the numeric variables. I was curious what the variance for the two types of SAT scores are, so I used the var function. I found that the variance for SATV is 937.4045 and the variance for SATM is 1153.193. I used select.if and cor to create a correlation matrix of the numeric variables in my dataset. This correlation matrix allowed me to see the correlations between each variable. 
+
+#### Correlation Heat Map 
+```{r}
+fulldata %>% select_if(is.numeric) %>% cor %>% as.data.frame %>% rownames_to_column %>% pivot_longer(-1) %>% ggplot(aes(rowname, name, fill=value)) + geom_tile() + theme(axis.text.x = element_text(angle=45, hjust=1)) + geom_text(aes(label=round(value, 2))) + xlab("") + ylab("") + scale_fill_gradient2(low="white", mid="pink" ,high="purple") + ggtitle("Correlation Heat Map")
+```
+
+After creating a correlation matrix, I thought it would be able to investigate if it were put into a visual. In order to do this, I created a correlation heat map. The correlation heat map only looks at the correlation for the numeric variables, so region and states are not accounted for here. I used the "scale_fill_gradient2" function to change the colors of this plot and make it more asthetically pleasing. By looking at this correlation heat map, I can investigate the strength and directions of the correlations between all of my numeric variables. For example, I can see that SATV and SATM have a strong positive correlation. You can also see that average crime and murder have a strong postive correlation. I also used "element_text" to change the angle of the x axis labels so that there was no overlap and they are easier to read. 
+
+#### Bar Chart 
+```{r}
+library(ggplot2)
+ggplot(fulldata, aes(x=State, y=avg_crime, fill=region)) + geom_bar(stat = "summary", fun.y="mean") + theme(axis.text.x = element_text(angle=90, hjust=1, size=8)) + scale_y_continuous(name = "Average Crime", breaks = seq(0, 150, by=25)) + ggtitle("Average Crime by State") + scale_fill_brewer() 
+```
+
+I created this bar chart so that I could visualize the average crime for each state. By putting them in bar chart, it is easy to compare the average crime in each different state. I decided to color the bars by region so that I could also visually compare the average crime in each region. I used "breaks" to change the default tick marks on the y-axis, so that the values could be visualize more easily. I used element_text to change the angle of the x-axis labels to 90 degrees and smaller font so that there is no overlap and the graph is easier to read. I used scale_fill_brewer to change the theme color to a blue color scheme. Based on this graph, there are no clear trends between regions, but it is easy to compare between states.  
+
+#### Scatter Plot 
+```{r}
+ggplot(fulldata, aes(Rape, dollars, color=region)) + geom_point() + ggtitle("Rape vs. Dollars Spent on Public Education") + scale_y_continuous(name = "Dollars Spent ($1000/student)") + scale_x_continuous(name = "Rape (per 100,000)")
+```
+
+I created a scatter plot to see if there is any relationship between rape and dollars spent on education. I colored the points by region to further examine any trends. As can be seen, the graph is very random and there seems to be no order to the points. This leads me to believe that, at least for this dataset, there is not a strong relationship between rape and dollars spent on education. 
+
+#### PAM 
+```{r}
+library(cluster)
+pam_dat <- fulldata %>% select(Murder, Assault, UrbanPop, Rape, region, pop, percent, dollars, pay, SATV, SATM, avg_crime)
+sil_width <- vector()
+for(i in 2:10){
+  pam_fit <- pam(pam_dat, k=i)
+  sil_width[i] <- pam_fit$silinfo$avg.width
+}
+ggplot() + geom_line(aes(x=1:10, y=sil_width)) + scale_x_continuous(name="k", breaks=1:10)
+
+pam1 <- fulldata %>% select(Murder, Assault, UrbanPop, Rape, pop, percent, dollars, pay, SATV, SATM, avg_crime) %>% pam(3)
+pam1
+
+final <- fulldata %>% mutate(cluster=as.factor(pam1$clustering))
+confmat <- final %>% group_by(region) %>% count(cluster) %>% arrange(desc(n)) %>% pivot_wider(names_from = "cluster", values_from = "n", values_fill = list("n"=0))
+confmat   
+
+round(sum(diag(as.matrix(confmat[,2:4])))/sum(confmat[2:4]),4)
+
+library(GGally)
+ggpairs(final, columns = 2:13, aes(color = region, shape = cluster))
+
+```
+
+In order to futher dive into my dataset, I performed a PAM analysis of my data. The first thing that I did was figure out the optimal number of clusters that should be used. I graphed k versus sil_width in order to do this. By examining the graph, I came to the conclusion that the optimal number of clusters is 3. I then ran PAM using the optimal number of clusters. I then calculed the accuracy of PAM and got a value of 0.22, which shows that it is not very accurate. I then used ggpairs to visualize the pairwise combinations of all my variables. I don't exactly know how to anazlyze it since the accuracy is very low and my visual is messy. 

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Madeleine Poziombka Portfolio</title>
+    <link>/</link>
+    <description>Recent content on Madeleine Poziombka Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New Post</title>
+      <link>/blog/new-post/</link>
+      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/new-post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project 2: Modeling, Testing, and Predicting</title>
+      <link>/project2final/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project2final/</guid>
+      <description>Madeleine Poziombka mp43576 Introduction 0.) For this project, I am using a breast cancer dataset. It contains 5 numeric variables and 1 categorical variable. The categorical variable is “diagnosis”, which tells us whether the breast lump was found to be malignant or benign. The 5 numeric variables are mean_radius, mean_texture, mean_perimeter, mean_area, and mean_smoothness. Mean_radius is the mean of distances from the center of the mass to points on the perimeter.</description>
+    </item>
+    
+    <item>
+      <title>Project 1: Exploratory Data Analysis</title>
+      <link>/project1final/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project1final/</guid>
+      <description>Madeleine Poziombka mp43576 Introduction For this project I used two datasets. The first dataset I found is called “USArrests”, which I found in the “datasets” package in R and contains data on violent crimes. This dataset contains 50 observations for 4 variables by the 50 US states. The first variable in this datasest is “Murder”“, which is measured by murder arrests per 100,000 people. The second variable in this dataset is”Assault“, which is measured by assault arrests per 100,000 people.</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>/projects/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      
+      <guid>/projects/</guid>
+      <description>Projects Here are some projects I have recently completed:
+  Exploratory Data Analysis
+  Modeling, Testing, and Predicting
+  </description>
+    </item>
+    
+  </channel>
+</rss>
