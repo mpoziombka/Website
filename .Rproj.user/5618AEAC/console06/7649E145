@@ -223,3 +223,47 @@ remote: Resolving deltas:   0% (0/52)[Kremote: Resolving deltas:  13% (7/52)[
 To https://github.com/mpoziombka/Website.git
  * [new branch]      master -> master
 ]0;/stor/home/mp43576/Website]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ [K]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ [K]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ [K]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ [K]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ [K]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ [K]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ [K]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ fi[K[Kgit add .
+]0;/stor/home/mp43576/Website]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ git commit -m "ce[K[Ksecond:[K"
+[master 7ff1d57] second
+ Committer: Madeleine Poziombka <mp43576@educcomp02.ccbb.utexas.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 51 files changed, 799 insertions(+), 146 deletions(-)
+ rewrite .Rproj.user/5618AEAC/console06/INDEX001 (70%)
+ delete mode 100644 .Rproj.user/5618AEAC/sources/s-8a4ef2b7/4C2E1884
+ delete mode 100644 .Rproj.user/5618AEAC/sources/s-8a4ef2b7/999A4EE8
+ delete mode 100644 .Rproj.user/5618AEAC/sources/s-8a4ef2b7/B77BDB46
+ delete mode 100644 .Rproj.user/5618AEAC/sources/s-8a4ef2b7/D78FCA08
+ delete mode 100644 .Rproj.user/shared/notebooks/25079127-project2final/1/5618AEAC8a4ef2b7/chunks.json
+ create mode 100644 .gitignore
+ create mode 100644 public/blog/2020-05-14-new-post_files/codememe.png
+ create mode 100644 public/resume project.pdf
+ create mode 100644 public/resume.pdf
+ create mode 100644 public/resume/index.html
+ create mode 100644 public/tags/resume/index.html
+ create mode 100644 public/tags/resume/index.xml
+ delete mode 100644 static/Resume as of 5:3:20.docx
+ create mode 100644 static/blog/2020-05-14-new-post_files/codememe.png
+ create mode 100644 static/resume.pdf
+]0;/stor/home/mp43576/Website]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ git push org[Kigin master
+Username for 'https://github.com': mpoziombka
+Password for 'https://mpoziombka@github.com': 
+Counting objects: 71, done.
+Delta compression using up to 16 threads.
+Compressing objects:   1% (1/58)   Compressing objects:   3% (2/58)   Compressing objects:   5% (3/58)   Compressing objects:   6% (4/58)   Compressing objects:   8% (5/58)   Compressing objects:  10% (6/58)   Compressing objects:  12% (7/58)   Compressing objects:  13% (8/58)   Compressing objects:  15% (9/58)   Compressing objects:  17% (10/58)   Compressing objects:  18% (11/58)   Compressing objects:  20% (12/58)   Compressing objects:  22% (13/58)   Compressing objects:  24% (14/58)   Compressing objects:  25% (15/58)   Compressing objects:  27% (16/58)   Compressing objects:  29% (17/58)   Compressing objects:  31% (18/58)   Compressing objects:  32% (19/58)   Compressing objects:  34% (20/58)   Compressing objects:  36% (21/58)   Compressing objects:  37% (22/58)   Compressing objects:  39% (23/58)   Compressing objects:  41% (24/58)   Compressing objects:  43% (25/58)   Compressing objects:  44% (26/58)   Compressing objects:  46% (27/58)   Compressing objects:  48% (28/58)   Compressing objects:  50% (29/58)   Compressing objects:  51% (30/58)   Compressing objects:  53% (31/58)   Compressing objects:  55% (32/58)   Compressing objects:  56% (33/58)   Compressing objects:  58% (34/58)   Compressing objects:  60% (35/58)   Compressing objects:  62% (36/58)   Compressing objects:  63% (37/58)   Compressing objects:  65% (38/58)   Compressing objects:  67% (39/58)   Compressing objects:  68% (40/58)   Compressing objects:  70% (41/58)   Compressing objects:  72% (42/58)   Compressing objects:  74% (43/58)   Compressing objects:  75% (44/58)   Compressing objects:  77% (45/58)   Compressing objects:  79% (46/58)   Compressing objects:  81% (47/58)   Compressing objects:  82% (48/58)   Compressing objects:  84% (49/58)   Compressing objects:  86% (50/58)   Compressing objects:  87% (51/58)   Compressing objects:  89% (52/58)   Compressing objects:  91% (53/58)   Compressing objects:  93% (54/58)   Compressing objects:  94% (55/58)   Compressing objects:  96% (56/58)   Compressing objects:  98% (57/58)   Compressing objects: 100% (58/58)   Compressing objects: 100% (58/58), done.
+Writing objects:   1% (1/71)   Writing objects:   2% (2/71)   Writing objects:   4% (3/71)   Writing objects:   5% (4/71)   Writing objects:   7% (5/71)   Writing objects:   8% (6/71)   Writing objects:   9% (7/71)   Writing objects:  11% (8/71)   Writing objects:  12% (9/71)   Writing objects:  14% (10/71)   Writing objects:  15% (11/71)   Writing objects:  16% (12/71)   Writing objects:  18% (13/71)   Writing objects:  19% (14/71)   Writing objects:  21% (15/71)   Writing objects:  22% (16/71)   Writing objects:  23% (17/71)   Writing objects:  25% (18/71)   Writing objects:  26% (19/71)   Writing objects:  28% (20/71)   Writing objects:  29% (21/71)   Writing objects:  30% (22/71)   Writing objects:  32% (23/71)   Writing objects:  33% (24/71)   Writing objects:  35% (25/71)   Writing objects:  36% (26/71)   Writing objects:  38% (27/71)   Writing objects:  39% (28/71)   Writing objects:  40% (29/71)   Writing objects:  42% (30/71)   Writing objects:  43% (31/71)   Writing objects:  45% (32/71)   Writing objects:  46% (33/71)   Writing objects:  47% (34/71)   Writing objects:  49% (35/71)   Writing objects:  50% (36/71)   Writing objects:  52% (37/71)   Writing objects:  53% (38/71)   Writing objects:  54% (39/71)   Writing objects:  56% (40/71)   Writing objects:  57% (41/71)   Writing objects:  59% (42/71)   Writing objects:  60% (43/71)   Writing objects:  61% (44/71)   Writing objects:  63% (45/71)   Writing objects:  64% (46/71)   Writing objects:  66% (47/71)   Writing objects:  67% (48/71)   Writing objects:  69% (49/71)   Writing objects:  70% (50/71)   Writing objects:  71% (51/71)   Writing objects:  73% (52/71)   Writing objects:  74% (53/71)   Writing objects:  76% (54/71)   Writing objects:  77% (55/71)   Writing objects:  78% (56/71)   Writing objects:  80% (57/71)   Writing objects:  81% (58/71)   Writing objects:  83% (59/71)   Writing objects:  85% (61/71)   Writing objects:  87% (62/71)   Writing objects:  88% (63/71)   Writing objects:  90% (64/71)   Writing objects:  91% (65/71)   Writing objects:  92% (66/71)   Writing objects:  94% (67/71)   Writing objects:  95% (68/71)   Writing objects:  97% (69/71)   Writing objects:  98% (70/71)   Writing objects: 100% (71/71)   Writing objects: 100% (71/71), 1.31 MiB | 3.66 MiB/s, done.
+Total 71 (delta 33), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/33)[Kremote: Resolving deltas:   3% (1/33)[Kremote: Resolving deltas:   6% (2/33)[Kremote: Resolving deltas:   9% (3/33)[Kremote: Resolving deltas:  12% (4/33)[Kremote: Resolving deltas:  15% (5/33)[Kremote: Resolving deltas:  18% (6/33)[Kremote: Resolving deltas:  21% (7/33)[Kremote: Resolving deltas:  24% (8/33)[Kremote: Resolving deltas:  27% (9/33)[Kremote: Resolving deltas:  30% (10/33)[Kremote: Resolving deltas:  33% (11/33)[Kremote: Resolving deltas:  36% (12/33)[Kremote: Resolving deltas:  39% (13/33)[Kremote: Resolving deltas:  42% (14/33)[Kremote: Resolving deltas:  45% (15/33)[Kremote: Resolving deltas:  48% (16/33)[Kremote: Resolving deltas:  51% (17/33)[Kremote: Resolving deltas:  54% (18/33)[Kremote: Resolving deltas:  57% (19/33)[Kremote: Resolving deltas:  63% (21/33)[Kremote: Resolving deltas:  69% (23/33)[Kremote: Resolving deltas:  72% (24/33)[Kremote: Resolving deltas:  75% (25/33)[Kremote: Resolving deltas:  78% (26/33)[Kremote: Resolving deltas:  81% (27/33)[Kremote: Resolving deltas:  84% (28/33)[Kremote: Resolving deltas:  87% (29/33)[Kremote: Resolving deltas:  90% (30/33)[Kremote: Resolving deltas:  93% (31/33)[Kremote: Resolving deltas:  96% (32/33)[Kremote: Resolving deltas: 100% (33/33)[Kremote: Resolving deltas: 100% (33/33), completed with 30 local objects.[K
+To https://github.com/mpoziombka/Website.git
+   1cc7843..7ff1d57  master -> master
+]0;/stor/home/mp43576/Website]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ [K]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ [K]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ [K]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ git add.[K .
