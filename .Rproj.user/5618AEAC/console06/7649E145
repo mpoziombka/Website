@@ -267,3 +267,28 @@ remote: Resolving deltas:   0% (0/33)[Kremote: Resolving deltas:   3% (1/33)[
 To https://github.com/mpoziombka/Website.git
    1cc7843..7ff1d57  master -> master
 ]0;/stor/home/mp43576/Website]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ [K]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ [K]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ [K]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ git add.[K .
+]0;/stor/home/mp43576/Website]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ fir[K[K[Kgit commit -m "thri[K[Kird"
+[master a35fac1] third
+ Committer: Madeleine Poziombka <mp43576@educcomp02.ccbb.utexas.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 11 files changed, 55 insertions(+), 31 deletions(-)
+ delete mode 100644 .Rproj.user/5618AEAC/sources/s-8a4ef2b7/B5956E8A
+ create mode 100644 public/img/project pic.png
+ create mode 100644 static/img/project pic.png
+]0;/stor/home/mp43576/Website]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ git push origin [K master
+Username for 'https://github.com': mpzooimabk          
+Password for 'https://github.com': 
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/mpoziombka/Website.git/'
+]0;/stor/home/mp43576/Website]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ fit[K[K[Kgit add .[K]0;mp43576@educcomp02: ~/Website[01;32mmp43576@educcomp02[00m:[01;34m~/Website[00m$ git add .
