@@ -7,7 +7,7 @@
     <meta name="author" content="Madeleine Poziombka" />
     <meta name="description" content="Describe your website">
     <link rel="shortcut icon" type="image/x-icon" href="../../img/favicon.ico">
-    <title>New Post</title>
+    <title>My First Time Using Python</title>
     <meta name="generator" content="Hugo 0.70.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../css/main.css" />
@@ -44,7 +44,7 @@
         
         <li><a href="../../projects/">PROJECTS</a></li>
         
-        <li><a href="../../resume/">RESUME</a></li>
+        <li><a href="../../resume.pdf">RESUME</a></li>
         
       
       </ul>
@@ -56,7 +56,7 @@
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="../../blog/new-post/">New Post</a></strong>
+            <strong><a href="../../blog/new-post/">My First Time Using Python</a></strong>
           </h3>
         </div>
         <div class="blog-title">
@@ -72,7 +72,68 @@
               
 
 
+<div class="figure">
+<img src="../../blog/2020-05-14-new-post_files/codememe.png" width="600" height="600" />
 
+</div>
+<p>Before my Computational Biology course at the University of Texas, I had never used python before. The only type of coding I was familiar with was R, since I had used it in my Biostatistics course from a few years prior. While personally I prefer using R, I can see why people prefer using python as it is able to do many interesting things. There are also ways that R and python can work together and/or do some of the same things.</p>
+<p>Here are some examples of simple, but cool things you can do with python:</p>
+<div id="character-counts" class="section level1">
+<h1>Character counts</h1>
+<pre class="python"><code>sentence = &quot;There are a lot of cool things that can be done in python!&quot;
+
+counts = {}
+for c in sentence:
+  if c in counts:
+    counts[c]+=1
+  else:
+    counts[c]=1
+    
+for c in counts:
+  print(c, &quot;appears&quot;, counts[c], &quot;times&quot;)</code></pre>
+<pre><code>## (&#39;a&#39;, &#39;appears&#39;, 4, &#39;times&#39;)
+## (&#39; &#39;, &#39;appears&#39;, 12, &#39;times&#39;)
+## (&#39;c&#39;, &#39;appears&#39;, 2, &#39;times&#39;)
+## (&#39;b&#39;, &#39;appears&#39;, 1, &#39;times&#39;)
+## (&#39;e&#39;, &#39;appears&#39;, 5, &#39;times&#39;)
+## (&#39;d&#39;, &#39;appears&#39;, 1, &#39;times&#39;)
+## (&#39;g&#39;, &#39;appears&#39;, 1, &#39;times&#39;)
+## (&#39;f&#39;, &#39;appears&#39;, 1, &#39;times&#39;)
+## (&#39;i&#39;, &#39;appears&#39;, 2, &#39;times&#39;)
+## (&#39;h&#39;, &#39;appears&#39;, 4, &#39;times&#39;)
+## (&#39;l&#39;, &#39;appears&#39;, 2, &#39;times&#39;)
+## (&#39;o&#39;, &#39;appears&#39;, 6, &#39;times&#39;)
+## (&#39;n&#39;, &#39;appears&#39;, 5, &#39;times&#39;)
+## (&#39;p&#39;, &#39;appears&#39;, 1, &#39;times&#39;)
+## (&#39;s&#39;, &#39;appears&#39;, 1, &#39;times&#39;)
+## (&#39;r&#39;, &#39;appears&#39;, 2, &#39;times&#39;)
+## (&#39;!&#39;, &#39;appears&#39;, 1, &#39;times&#39;)
+## (&#39;T&#39;, &#39;appears&#39;, 1, &#39;times&#39;)
+## (&#39;y&#39;, &#39;appears&#39;, 1, &#39;times&#39;)
+## (&#39;t&#39;, &#39;appears&#39;, 5, &#39;times&#39;)</code></pre>
+</div>
+<div id="subsitution-with-replacement" class="section level1">
+<h1>Subsitution with replacement</h1>
+<pre class="python"><code>import re
+
+string = &quot;python is so easy&quot;
+
+re.sub(r&quot;python.* is&quot;, &quot;r is&quot;, string)</code></pre>
+<pre><code>## &#39;r is so easy&#39;</code></pre>
+<pre class="python"><code>re.sub(r&quot;is&quot;, &quot;isn&#39;t&quot;, string)</code></pre>
+<pre><code>## &quot;python isn&#39;t so easy&quot;</code></pre>
+</div>
+<div id="r-and-python-interacting" class="section level1">
+<h1>R and python interacting</h1>
+<pre class="r"><code>library(reticulate)
+
+fi &lt;- &quot;Final&quot;</code></pre>
+<pre class="python"><code>fi=&quot;project&quot;
+print(r.fi,fi)</code></pre>
+<pre><code>## (&#39;Final&#39;, &#39;project&#39;)</code></pre>
+<pre class="r"><code>cat(c(fi,py$fi))</code></pre>
+<pre><code>## Final project</code></pre>
+</div>
 
               <hr>
               <div class="related-posts">

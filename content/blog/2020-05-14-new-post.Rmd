@@ -1,9 +1,63 @@
 ---
-title: New Post
-author: ''
+title: My First Time Using Python
+author: 'Madeleine Poziombka'
 date: '2020-05-14'
 slug: new-post
 categories: []
 tags: []
 description: ''
 ---
+
+![](/blog/2020-05-14-new-post_files/codememe.png){width=600px height=600px}
+
+
+
+Before my Computational Biology course at the University of Texas, I had never used python before. The only type of coding I was familiar with was R, since I had used it in my Biostatistics course from a few years prior. While personally I prefer using R, I can see why people prefer using python as it is able to do many interesting things. There are also ways that R and python can work together and/or do some of the same things. 
+
+Here are some examples of simple, but cool things you can do with python: 
+
+
+#Character counts
+```{python}
+sentence = "There are a lot of cool things that can be done in python!"
+
+counts = {}
+for c in sentence:
+  if c in counts:
+    counts[c]+=1
+  else:
+    counts[c]=1
+    
+for c in counts:
+  print(c, "appears", counts[c], "times")
+```
+
+
+#Subsitution with replacement
+```{python}
+import re
+
+string = "python is so easy"
+
+re.sub(r"python.* is", "r is", string)
+
+re.sub(r"is", "isn't", string)
+```
+
+
+#R and python interacting
+```{r}
+library(reticulate)
+
+fi <- "Final"
+```
+
+```{python}
+fi="project"
+print(r.fi,fi)
+```
+
+```{r}
+cat(c(fi,py$fi))
+```
+

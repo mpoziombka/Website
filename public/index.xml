@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>New Post</title>
+      <title>My First Time Using Python</title>
       <link>/blog/new-post/</link>
       <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
       
       <guid>/blog/new-post/</guid>
-      <description></description>
+      <description>Before my Computational Biology course at the University of Texas, I had never used python before. The only type of coding I was familiar with was R, since I had used it in my Biostatistics course from a few years prior. While personally I prefer using R, I can see why people prefer using python as it is able to do many interesting things. There are also ways that R and python can work together and/or do some of the same things.</description>
     </item>
     
     <item>
